@@ -5,6 +5,7 @@ import RegisterSubject from './pages/RegisterSubject';
 function Routes() {
   return (
     <BrowserRouter>
+      <Route path='/' component={RegisterSubject} />
       <Route path='/registerSubject' component={RegisterSubject} />
     </BrowserRouter>
   );
