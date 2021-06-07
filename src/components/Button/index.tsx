@@ -2,12 +2,12 @@ import './styles.css';
 
 
 interface IButton {
-  
+  type: string,
 }
 
-const Button: React.FC<IButton> = (props) => {
+const Button: React.FC<IButton> = (type, props) => {
   return ( 
-    <button>{props.children}</button>      
+    <button type={props.type} >{props.children}</button>      
   );
 }
 

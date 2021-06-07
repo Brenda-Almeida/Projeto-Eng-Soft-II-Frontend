@@ -14,7 +14,7 @@ function RegisterTopic() {
               <Input type="text" name="topic" placeholder="Nome do Tópico" />
               <Input type="text" name="description" placeholder="Descrição" />
             </div>
-            <Button>Criar</Button>
+            <Button type="submit">Criar</Button>
           </form>
         </div>
       </div>
