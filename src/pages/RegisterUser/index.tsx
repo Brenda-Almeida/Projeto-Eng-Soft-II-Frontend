@@ -18,11 +18,11 @@ function RegisterUser() {
             <label htmlFor="">Status: </label>
             <div className="input-radio">
               <Input type="radio" name="status" value="1" checked />
-              <label className="option-radio" htmlFor="">Aluno</label>              
-              <Input type="radio" name="status" value="0"  />
+              <label className="option-radio" htmlFor="">Aluno</label>
+              <Input type="radio" name="status" value="0" />
               <label htmlFor="">Professor</label>
             </div>
-            <Button>Criar</Button>
+            <Button type="submit">Criar</Button>
           </form>
         </div>
       </div>
