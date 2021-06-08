@@ -49,9 +49,9 @@ function RegisterUser() {
             </div>
             <label htmlFor="">Status: </label>
             <div className="input-radio">
-              <Input type="radio" name="status" value="1" checked = {status === "1"} onChange = { event => setType(event.target.value)} />
+              <Input type="radio" name="status" value="1" checked = {type === "1"} onChange = { event => setType(event.target.value)} />
               <label className="option-radio" htmlFor="">Aluno</label>              
-              <Input type="radio" name="status" value="0" checked = {status === "0"} onChange = { event => setType(event.target.value)} />
+              <Input type="radio" name="status" value="0" checked = {type === "0"} onChange = { event => setType(event.target.value)} />
               <label htmlFor="">Professor</label>
             </div>
             <Button type="submit">Criar</Button>
