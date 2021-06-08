@@ -55,7 +55,7 @@ function RegisterTopic() {
                 onChange={event => setDescription(event.target.value)}
                 placeholder="Descrição" />
             </div>
-            <Button type="submit">Criar</Button>
+            <Button>Criar</Button>
           </form>
         </div>
       </div>

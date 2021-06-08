@@ -78,7 +78,7 @@ function RegisterSubject () {
               />
               <label htmlFor="">Desativo</label>
             </div>
-            <Button type="submit">Criar</Button>
+            <Button>Criar</Button>
           </form>
         </div>
       </div>

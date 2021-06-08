@@ -54,7 +54,7 @@ function RegisterUser() {
               <Input type="radio" name="status" value="0" checked = {type === "0"} onChange = { event => setType(event.target.value)} />
               <label htmlFor="">Professor</label>
             </div>
-            <Button type="submit">Criar</Button>
+            <Button>Criar</Button>
           </form>
         </div>
       </div>
