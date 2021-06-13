@@ -8,13 +8,13 @@ input[type=text] {
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0;
-  box-shadow: 0 0 5px #9932CC;
-  border-color: #9932CC;
+  box-shadow: 0 0 5px #6161b1;
+  border-color: #6161b1;
 }
 
 input[type=text]:focus {
   border-radius: 10px;
-  box-shadow: 0 0 8px #6c01a1;
+  box-shadow: 0 0 8px rgb(76, 0, 114);
   outline: 0;
   border-color: #fff;
 }
@@ -25,13 +25,13 @@ input[type=password] {
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0;
-  box-shadow: 0 0 5px #9932CC;
-  border-color: #9932CC;
+  box-shadow: 0 0 5px #6161b1;
+  border-color: #6161b1;
 }
 
 input[type=password]:focus {
   border-radius: 10px;
-  box-shadow: 0 0 8px #6c01a1;
+  box-shadow: 0 0 8px #6161b1;
   outline: 0;
   border-color: #fff;
 }
@@ -42,13 +42,13 @@ input[type=email] {
   border-radius: 10px;
   padding: 10px;
   margin: 10px 0;
-  box-shadow: 0 0 5px #9932CC;
-  border-color: #9932CC;
+  box-shadow: 0 0 5px #6161b1;
+  border-color: #6161b1;
 }
 
 input[type=email]:focus {
   border-radius: 10px;
-  box-shadow: 0 0 8px #6c01a1;
+  box-shadow: 0 0 8px rgb(76, 0, 114);
   outline: 0;
   border-color: #fff;
 }

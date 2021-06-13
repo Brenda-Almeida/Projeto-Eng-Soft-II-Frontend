@@ -6,7 +6,7 @@ button {
   padding: 10px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #9932CC;
+  background-color: #39396e;
   border: 0;
   border-radius: 10px;
   transition: 500ms;
@@ -14,5 +14,6 @@ button {
 
 button:hover {
   cursor: pointer;
-  background-color: #8601c9;
+  background-color: #d7c4df;
+  color: #39396e;
 }
