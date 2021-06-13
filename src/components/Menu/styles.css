@@ -1,0 +1,11 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 100px;
+}
+
+hr {
+  margin-top: -25px;
+  border-color: #d7c4df;
+}

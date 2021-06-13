@@ -6,7 +6,7 @@ import "./styles.css";
 
 function Landing() {
   return (
-    <div className="bg-landing"> kdjkasjdkaj
+    <div className="bg-landing">
       <div className="content-landing">
         <span>Bem-Vindo</span>
         <span>NomeDoSite</span>

@@ -1,0 +1,25 @@
+li {
+  font-weight: 600;
+  font-size: 22px;
+  list-style: none;
+  margin: 10px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+
+li img {
+  width: 70px;
+  height: 70px;
+  margin-top: -25px;
+}
+
+.link {
+  color: #39396e;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #121258;
+  text-decoration: none;
+}
