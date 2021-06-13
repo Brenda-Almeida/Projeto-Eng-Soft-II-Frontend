@@ -6,14 +6,13 @@ import "./styles.css";
 
 function Landing() {
   return (
-    <div className="bg-index">
-      <div className="content-index">
+    <div className="bg-landing"> kdjkasjdkaj
+      <div className="content-landing">
         <span>Bem-Vindo</span>
         <span>NomeDoSite</span>
         <Link to="/registerUser" className="link">
           <Button>LOGIN</Button>
         </Link>
-
       </div>
     </div>
   );

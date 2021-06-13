@@ -1,4 +1,4 @@
-.bg-index {
+.bg-landing {
   background: url("../../images/bgLanding.png") no-repeat;
   height: 100vh;
   background-position: center;
@@ -6,7 +6,7 @@
   overflow: hidden;
 }
 
-.bg-index .content-index {
+.bg-landing .content-landing {
   transform: skewY(-4deg);
   height: 100vh;
   display: flex;
@@ -16,18 +16,18 @@
   font-weight: 600; 
 }
 
-.content-index span {
+.content-landing span {
   font-size: 32px;
   color: #39396e;  
 }
 
-.content-index .link {
+.content-landing .link {
   margin-top: 20px;
   width: 15%;
 }
 
 @media only screen and (max-width: 600px) {
-  .bg-index {
+  .bg-landing {
     background-size: auto;
   }
 }
