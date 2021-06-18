@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 
 import logo from '../../images/logo.gif';
 
@@ -7,7 +8,24 @@ import CardSubject from '../../components/CardSubject';
 
 import "./styles.css";
 
+import api from '../../services/api';
+
+interface Subject {
+  id: string;
+  name: string;  
+}
+
 function Home() {
+  const [ subjects, setSubject ] = useState<Subject[]>([])
+
+    useEffect(() => {
+      api.get('/subjects').then(response => {
+        setSubject(response.data)
+      })
+    }, [])
+
+    
+
   return (
     <div>
       <Menu>
@@ -15,13 +33,12 @@ function Home() {
         <MenuItem to="/createSubject">Criar Disciplina</MenuItem>
         <MenuItem to="/">Sair</MenuItem>
       </Menu>
-      <div className="subjects">   
-        <CardSubject SubjectName="Ciências"></CardSubject>    
-        <CardSubject SubjectName="Biologia"></CardSubject>    
-        <CardSubject SubjectName="Matemática"></CardSubject>    
-        <CardSubject SubjectName="Ciências"></CardSubject>    
-        <CardSubject SubjectName="Biologia"></CardSubject>    
-        <CardSubject SubjectName="Matemática"></CardSubject>    
+      <div className="subjects">  
+      {subjects.map((subject: Subject) => {
+        return (
+          <CardSubject SubjectName={subject.name} key={subject.id}/>
+        )
+      })}     
       </div>
     </div>
   );

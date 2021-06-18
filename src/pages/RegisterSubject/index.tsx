@@ -23,7 +23,7 @@ function RegisterSubject () {
     }
     
     if (name !== '' && period !== '' && status !== '') {
-      const response = await api.post('/subjects', data)
+      const response = await api.post('/createSubjects', data)
       
       if (response.status === 200) {
         /* window.location.href = '' */
