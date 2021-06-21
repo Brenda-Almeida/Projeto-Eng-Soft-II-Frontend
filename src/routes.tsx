@@ -6,6 +6,7 @@ import Home from './pages/Home';
 
 import RegisterSubject from './pages/RegisterSubject';
 import CreateTopic from './pages/CreateTopic';
+import TopicList from './pages/TopicList';
 
 
 function Routes() {
@@ -16,6 +17,7 @@ function Routes() {
       <Route path='/home' exact component={Home} />
       <Route path='/createSubject' component={RegisterSubject} />
       <Route path='/createTopic' component={CreateTopic} />
+      <Route path='/topicList' component={TopicList} />
     </BrowserRouter>
   );
 }
