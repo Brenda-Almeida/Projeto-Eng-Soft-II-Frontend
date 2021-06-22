@@ -1,0 +1,44 @@
+.containerLogin {
+    width: 100vw;
+    height: 100vh;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content-form {
+    width: 100%;
+    max-width: 1200px;  
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    border: 1px solid rgba(155, 155, 155, 0.50);
+    box-shadow: 0 0 5px rgb(121, 121, 121);
+    padding: 20px 20px 30px 20px;
+    
+  }
+  
+  .form {
+    font-size: 24px;
+    width: 50%;
+  }
+  
+  .input-text {
+    margin: 20px 0;
+  }
+
+  .input-radio {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+  }
+  
+  .input-radio .option-radio {
+    margin-right: 20px;
+  }
+  
+  
+  
