@@ -10,7 +10,7 @@ function Landing() {
       <div className="content-landing">
         <span>Bem-Vindo</span>
         <span>NomeDoSite</span>
-        <Link to="/registerUser" className="link">
+        <Link to="/login" className="link">
           <Button>LOGIN</Button>
         </Link>
       </div>
