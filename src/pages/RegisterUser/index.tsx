@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router-dom'
 import api from '../../services/api';
 import Input from "../../components/Input"
 import Button from "../../components/Button"
 
-import './user.css';
+import './styles.css';
 
 function RegisterUser() {
 
@@ -37,7 +38,7 @@ function RegisterUser() {
   }
 
   return (
-    <div className="content">
+    <div className="contentRegister">
       <div className="content-form">
         <h1 className="title">Cadastro</h1>
         <div className="form">
@@ -55,6 +56,7 @@ function RegisterUser() {
               <label htmlFor="">Professor</label>
             </div>
             <Button>Criar</Button>
+            <p>Já possui cadastro? Faça seu <NavLink to="/login">login</NavLink></p>            
           </form>
         </div>
       </div>

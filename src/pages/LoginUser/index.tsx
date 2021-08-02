@@ -4,7 +4,7 @@ import Input from "../../components/Input"
 import Button from "../../components/Button"
 import { Link, useHistory } from 'react-router-dom';
 
-import './user.css';
+import './styles.css';
 import { useAuth } from '../../hooks/Auth';
 
 const LoginUser: React.FC = () => {
@@ -41,7 +41,7 @@ const LoginUser: React.FC = () => {
         history.push('/home');
       } catch (err) {
         console.log( err);
-        alert("Chegue suas credenciais!");
+        alert("Check suas credenciais!");
       }
     },
     [signIn, history, email, password],

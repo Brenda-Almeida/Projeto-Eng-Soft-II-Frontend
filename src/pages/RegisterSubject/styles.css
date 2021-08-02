@@ -1,4 +1,4 @@
-.content {
+.content-subject {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -20,6 +20,14 @@
   box-shadow: 0 0 5px rgb(121, 121, 121);
   padding: 20px 20px 30px 20px;
   
+}
+
+.buttonBack {
+  font-size: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  color: #39396e;
 }
 
 .form {

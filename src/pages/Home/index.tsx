@@ -18,11 +18,20 @@ interface Subject {
 function Home() {
   const [ subjects, setSubject ] = useState<Subject[]>([])
 
-    useEffect(() => {
-      api.get('/subjects').then(response => {
-        setSubject(response.data)
-      })
-    }, [])
+  var user = localStorage.getItem('@Profe:user')
+    if(user) {
+      var userObject = JSON.parse(user)
+      var idUser = userObject.id
+    }
+
+  useEffect(() => {
+    api.get('/subjects').then(response => {
+      setSubject(response.data)
+    })
+  }, [])
+
+  
+    
 
     
 

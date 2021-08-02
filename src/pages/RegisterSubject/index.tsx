@@ -6,6 +6,7 @@ import './styles.css';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import { NavLink } from 'react-router-dom';
 
 
 function RegisterSubject () {
@@ -38,8 +39,9 @@ function RegisterSubject () {
   }
   
   return (
-    <div className="content">
+    <div className="content-subject">
       <div className="content-form">
+        <NavLink to="/home" className="buttonBack">Voltar</NavLink>
         <h1 className="title">Criar Disciplina</h1>
         <div className="form">
           <form onSubmit={handleSubmit}>

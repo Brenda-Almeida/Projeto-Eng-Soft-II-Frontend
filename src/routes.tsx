@@ -9,6 +9,7 @@ import RegisterSubject from './pages/RegisterSubject';
 import CreateTopic from './pages/CreateTopic';
 import TopicList from './pages/TopicList';
 import Materias from './pages/Materias';
+import ClassRoom from './pages/ClassRoom';
 
 
 function Routes() {
@@ -22,6 +23,7 @@ function Routes() {
       <Route path='/createTopic' component={CreateTopic} />
       <Route path='/topicList' component={TopicList} />
       <Route path='/materias' component={Materias} />
+      <Route path='/classroom' component={ClassRoom} />
     </BrowserRouter>
   );
 }

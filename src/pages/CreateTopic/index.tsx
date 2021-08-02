@@ -5,6 +5,7 @@ import './styles.css';
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
+import { NavLink } from 'react-router-dom';
 
 
 function RegisterTopic() {
@@ -38,6 +39,7 @@ function RegisterTopic() {
   return (
     <div className="content">
       <div className="content-form">
+      <NavLink to="/topicList" className="buttonBack">Voltar</NavLink>
         <h1 className="title">Criar Tópico</h1>
         <div className="form">
           <form onSubmit={handleSubmit} >

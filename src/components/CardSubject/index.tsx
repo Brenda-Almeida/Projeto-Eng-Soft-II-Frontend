@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import './styles.css';
 
 interface ICardSubject {
@@ -7,7 +8,7 @@ interface ICardSubject {
 const CardSubject: React.FC<ICardSubject> = (props) => {
   return ( 
     <div className="card">
-      <h3>{props.SubjectName}</h3>
+      <NavLink to="/topicList" className="title">{props.SubjectName}</NavLink>
     </div>
   );
 }

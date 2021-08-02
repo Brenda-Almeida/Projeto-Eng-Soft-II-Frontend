@@ -1,6 +1,12 @@
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import Button from '../../components/Button';
 import api from '../../services/api';
+
+import Menu from '../../components/Menu';
+import MenuItem from '../../components/MenuItem';
+
+import logo from '../../images/logo.gif';
 
 import './styles.css';
 
@@ -25,13 +31,18 @@ function TopicList() {
   return (
 
     <div className="body">
-      <div className="content">
+      <Menu>
+        <MenuItem to="/home"><img src={logo} alt=""/></MenuItem>
+        <MenuItem to="/createTopic">Criar Tópico</MenuItem>
+        <MenuItem to="/home">Voltar</MenuItem>
+      </Menu>
+      <div className="contentTopic">
         {topics.map((topic: Topic) => {
           return (
             <div className="content-form">
               <h1 className="title">{topic.name}</h1>
               <h2 className="title">{topic.description}</h2>
-              <Button>Acessar</Button>
+              <NavLink to="/classroom" className="acess">Acessar</NavLink>
             </div>
           )
         })}
