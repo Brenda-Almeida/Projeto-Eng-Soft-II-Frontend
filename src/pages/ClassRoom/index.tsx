@@ -10,41 +10,45 @@ import "./styles.css";
 
 import api from '../../services/api';
 
-interface Subject {
+interface Content {
   id: string;
-  name: string;  
+  title: string;
+  video_link: string;
+  archives: string;
+  topics_id: string;
+
 }
 
 function ClassRoom() {
-  const [ subjects, setSubject ] = useState<Subject[]>([])
+  const [content, setContent] = useState<Content[]>([])
 
-  /*useEffect(() => {
-    api.get('/content').then(response => {
-      setSubject(response.data)
-    })
-  }, []) */   
+  useEffect(() => {
+
+    async function loadMaterias() {
+      const response = await api.get('/content');
+      console.log(response.data)
+      setContent(response.data)
+    }
+    loadMaterias();
+  }, [])
 
   return (
     <div>
       <Menu>
-        <MenuItem to="/home"><img src={logo} alt=""/></MenuItem>
+        <MenuItem to="/home"><img src={logo} alt="" /></MenuItem>
         <MenuItem to="/createContent">Criar Conteúdo</MenuItem>
         <MenuItem to="/topicList">Voltar</MenuItem>
       </Menu>
-      <div className="contentClass"> 
-      <ListContent title="Aula 01"
-            video="https://www.youtube.com/watch?v=i2FN-PRrBfw"
-          /> 
-        <ListContent title="Aula 02"
-          video="https://www.youtube.com/watch?v=i2FN-PRrBfw"
-        /> 
-         
-         
-      {/* {subjects.map((subject: Subject) => {
-        return (
-          
-        ) */}
-          
+
+      <div className="contentClass">
+     
+        {content.map((content: Content) => (
+          <ListContent title={content.title}
+            video={content.video_link}
+            archives={content.archives}
+          />
+        ))}
+
       </div>
     </div>
   );
