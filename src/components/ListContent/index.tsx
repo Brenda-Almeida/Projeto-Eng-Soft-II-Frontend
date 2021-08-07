@@ -5,6 +5,7 @@ import './styles.css';
 interface IListContent {
   title: string;
   video: string;
+  archives: string;
 }
 
 
@@ -14,6 +15,7 @@ const ListContent: React.FC<IListContent> = (props) => {
       <li>
         {props.title}
         <a href={props.video} className="linkVideo">Assista ao Vídeo Aula</a>
+        <p className="archives">{props.archives}</p>
         <input type="checkbox" />
       </li>
     </ul>
