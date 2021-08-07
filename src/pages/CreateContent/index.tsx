@@ -21,7 +21,6 @@ function RegisterContent() {
       name: name,
       description: description,
       file:file,
-
     }
 
     if (name !== '' && description !== '' && file !== '') {
