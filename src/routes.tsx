@@ -7,6 +7,7 @@ import Home from './pages/Home';
 
 import RegisterSubject from './pages/RegisterSubject';
 import CreateTopic from './pages/CreateTopic';
+import CreateContent from './pages/CreateContent';
 import TopicList from './pages/TopicList';
 import Materias from './pages/Materias';
 import ClassRoom from './pages/ClassRoom';
@@ -38,6 +39,7 @@ function Routes() {
           <Route path='/home' component={Home} />
           <Route path='/createSubject' component={RegisterSubject} />
           <Route path='/createTopic' component={CreateTopic} />
+          <Route path='/createContent' component={CreateContent} />
           <Route component={Home}/>  
 
         </Switch>
@@ -50,7 +52,7 @@ function Routes() {
       <Switch>
         <Route path='/' exact component={Landing} />      
         <Route path='/registerUser' component={RegisterUser} />
-        <Route path='/login' component={LoginUser} />    
+        <Route path='/login' component={LoginUser} />
         <Route component={Landing}/>  
       </Switch>
     </BrowserRouter>

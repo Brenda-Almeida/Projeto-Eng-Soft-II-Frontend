@@ -10,21 +10,21 @@ import { NavLink } from 'react-router-dom';
 
 function RegisterContent() {
 
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [file, setFile] = useState('');
-  const subjectId = '15390eac-c7c5-4878-8524-c2cfa6c54d0b';
+  const [title, setTitle] = useState('');
+  const [videoLink, setVideoLink] = useState('');
+  const [archives, setArchives] = useState('');
+  const topicId = '18c4ffea-b78a-4212-a711-aefcc5ca13ef';
 
   async function handleSubmit() {
     const data = {
-      subject_id: subjectId,
-      name: name,
-      description: description,
-      file:file,
+      title: title,
+      video_link: videoLink,
+      archives: archives,
+      topics_id: topicId,
     }
 
-    if (name !== '' && description !== '' && file !== '') {
-      const response = await api.post('/contents', data)
+    if (title !== '' && videoLink !== '' && archives !== '') {
+      const response = await api.post('/content', data);
 
       if (response.status === 200) {
         /* window.location.href = '' */
@@ -40,29 +40,32 @@ function RegisterContent() {
   return (
     <div className="content">
       <div className="content-form">
-      <NavLink to="/Materiais" className="buttonBack">Voltar</NavLink>
+        <NavLink to="/Materiais" className="buttonBack">Voltar</NavLink>
         <h1 className="title">Criar Novo Conteúdo</h1>
         <div className="form">
           <form onSubmit={handleSubmit} >
             <div className="input-text">
               <Input
                 type="text"
-                name="name"
-                value={name}
-                onChange={event => setName(event.target.value)}
+                name="title"
+                value={title}
+                onChange={event => setTitle(event.target.value)}
+                required
                 placeholder="Título do Conteúdo" />
               <Input
                 type="text"
-                name="description"
-                value={description}
-                onChange={event => setDescription(event.target.value)}
-                placeholder="Descrição" />
-                <Input
-                type="file"
-                name="file"
-                value={file}
-                onChange={event => setFile(event.target.value)}
-                placeholder="Adicionar arquivo" />
+                name="videoLink"
+                value={videoLink}
+                onChange={event => setVideoLink(event.target.value)}
+                required
+                placeholder="Adicionar link da video aula" />
+              <Input
+                type="text"
+                name="archives"
+                value={archives}
+                onChange={event => setArchives(event.target.value)}
+                required
+                placeholder="Adicionar link do arquivo de aula" />
             </div>
             <Button>Criar</Button>
           </form>
