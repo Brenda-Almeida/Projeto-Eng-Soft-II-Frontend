@@ -4,22 +4,16 @@ import api from '../services/api';
 
 interface AuthState {
   token: string;
-  user: iUser;
+  user: object;
 }
 
 interface signInCredentials {
   email: string;
   password: string;
 }
-interface iUser {
-  id: string,
-  name: string,
-  email: string,
-  type: number,
-}
 
 interface AuthContextData {
-  user: iUser;
+  user: object;
   signIn(credentials: signInCredentials): Promise<void>;
   signOut(): void;
 }
@@ -59,7 +53,14 @@ const AuthProvider: React.FC = ({ children }) => {
             password,
           })
 
-        const { token, user } = response.data.data;
+        const { token, user} = response.data.data;
+  
+        console.log("token: ", token);
+        console.log("user: ", user);
+
+        //const userData: any = token;
+  
+        //const user = userData.usr;
   
         localStorage.setItem('@Profe:token', token);
   
