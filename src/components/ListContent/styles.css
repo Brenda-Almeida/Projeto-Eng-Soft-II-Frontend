@@ -4,6 +4,10 @@
   border: 1px solid #393939;
   
 }
+a {
+  margin-top: 10px;
+  text-decoration: none;
+}
 
 .cardContent li {
   width: 100%;

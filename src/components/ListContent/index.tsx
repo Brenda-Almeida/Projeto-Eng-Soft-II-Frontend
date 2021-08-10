@@ -14,8 +14,8 @@ const ListContent: React.FC<IListContent> = (props) => {
     <ul className="cardContent">
       <li>
         {props.title}
-        <a href={props.video} className="linkVideo">Assista ao Vídeo Aula</a>
-        <p className="archives">{props.archives}</p>
+        <a href={props.video} className="linkVideo" target="_blank">Assista ao Vídeo Aula</a>
+        <a href={props.archives} className="archives" target="_blank">Arquivos da Aula</a>
         <input type="checkbox" />
       </li>
     </ul>

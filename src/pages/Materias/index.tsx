@@ -6,37 +6,41 @@ import Cadastrar from '../../components/Cadastrar';
 
 import Button from '../../components/Button';
 import api from '../../services/api';
+import { NavLink } from 'react-router-dom';
 
 interface Materias {
     id: string;
     name: string;
-    id_teacher: string;
+    id_teacher: String;
     period: string;
+}
+
+interface Register {
+    id_subject: String;
 }
 
 function Materias() {
     const [materias, setmaterias] = useState([]);
     const [id_student, setid_student] = useState([]);
     const [id_subject, setid_subject] = useState([]);
+    const [registers, setRegister] = useState([]);
 
     async function handleSubmit(id: string) {
 
         const data = {
-            id_student: "c5b7da13-497f-41ef-b822-2611cd07af58",
+            id_student: "b9769484-1c74-4728-ae1c-ad1f90b120c3", // precisa ser recuperado do user logado
             id_subject: id,
         }
-
-
 
         const response = await api.post('/registered', data)
 
         if (response.status === 200) {
-            /* window.location.href = '' */
             alert("Cadastrado com sucesso");
+            window.location.href = '/materias'
+
         } else {
             alert("Não Cadastrado");
         }
-
 
     }
 
@@ -44,12 +48,35 @@ function Materias() {
 
         async function loadMaterias() {
             const response = await api.get('/subjects');
-            console.log(response.data)
             setmaterias(response.data)
         }
         loadMaterias();
     }, [])
 
+    useEffect(() => {
+        api.get('/registered').then(response => {
+            setRegister(response.data)
+        })
+      }, [])
+
+      let materiaClean: Array<Materias> = Array();
+
+      materias.map((materia: Materias) => { 
+        materiaClean.push(materia);
+      })
+
+      let i = 0;
+
+      materias.map((materia: Materias) => {          
+        registers.map((register: Register, indice) => {
+            if(materia.id == register.id_subject){
+                materiaClean.splice(indice - i, 1)
+                i++;
+            }
+          })
+      }) 
+     
+      
     return (
         <div className="content">
             <div className="content-form">
@@ -65,17 +92,19 @@ function Materias() {
                             </tr>
                         </thead>
                         <tbody>
-                            {materias.map((materia: Materias) => (
+                            {materiaClean.map((materia: Materias) => (
                                 <tr>
                                     <td>{materia.name}</td>
                                     {<td>{materia.id_teacher}</td>}
                                     <td>{materia.period}</td>
-                                    <td><button onClick={() => handleSubmit(materia.id)}>cadastrar</button></td>
+                                    <td><button  onClick={() => handleSubmit(materia.id)}>cadastrar</button></td>
                                 </tr>
                             ))}
                         </tbody>
                     </table>
-                    <Button>voltar</Button>
+                    <div className="buttonMaterias">
+                        <NavLink className="buttonMaterias" to="/home">voltar</NavLink>
+                    </div>
                 </div>
             </div>
         </div>

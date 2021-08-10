@@ -5,15 +5,20 @@ import './styles.css';
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
+
+interface ITopic {
+  id: string
+}
 
 
 function RegisterContent() {
-
+  
+  const params = useParams<ITopic>()
   const [title, setTitle] = useState('');
   const [videoLink, setVideoLink] = useState('');
   const [archives, setArchives] = useState('');
-  const topicId = '18c4ffea-b78a-4212-a711-aefcc5ca13ef';
+  const topicId = params.id;
 
   async function handleSubmit() {
     const data = {
@@ -40,7 +45,7 @@ function RegisterContent() {
   return (
     <div className="content">
       <div className="content-form">
-        <NavLink to="/Materiais" className="buttonBack">Voltar</NavLink>
+        <NavLink to="/home" className="buttonBack">Voltar</NavLink>
         <h1 className="title">Criar Novo Conteúdo</h1>
         <div className="form">
           <form onSubmit={handleSubmit} >

@@ -5,14 +5,18 @@ import './styles.css';
 
 import Input from '../../components/Input'
 import Button from '../../components/Button'
-import { NavLink } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 
+interface subjectParams {
+  id: string
+}
 
 function RegisterTopic() {
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const subjectId = '15390eac-c7c5-4878-8524-c2cfa6c54d0b';
+  const params = useParams<subjectParams>()
+  const subjectId = params.id;
 
   async function handleSubmit() {
     const data = {

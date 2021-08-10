@@ -4,7 +4,7 @@ import Input from "../../components/Input"
 import Button from "../../components/Button"
 import { Link, useHistory } from 'react-router-dom';
 
-import './styles.css';
+import './user.css';
 import { useAuth } from '../../hooks/Auth';
 
 const LoginUser: React.FC = () => {
@@ -17,13 +17,13 @@ const LoginUser: React.FC = () => {
   const handleSubmit = useCallback(
     async () => {
       try {
-        
+
         const response = await api.post('/sessions', {
           email,
           password,
         })
 
-      const { token, user} = response.data;
+      const { token, user } = response.data;
 
       console.log("token: ", token);
       console.log("user: ", user);
@@ -41,7 +41,7 @@ const LoginUser: React.FC = () => {
         history.push('/home');
       } catch (err) {
         console.log( err);
-        alert("Check suas credenciais!");
+        alert("Cheque suas credenciais!");
       }
     },
     [signIn, history, email, password],
